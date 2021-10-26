@@ -157,6 +157,62 @@ read -p "S, C, R, T, N >" ask_weather
 
 done
 
+echo "What's Season Where you Live?"
+echo "If it is Spring, Type S."
+echo "Summer is M, Autumn is A, Winter is W."
+echo
+echo
+
+while :
+do
+
+	read -p "S, M, A, W >" ask_season
+
+	case $ask_season in
+
+	[Ss] )
+		echo
+		echo
+		echo "Spring" >> moodwatcher_history
+		break
+	;;
+	
+	[Mm] )
+		echo
+		echo
+		echo "Summer" >> moodwatcher_history
+		break
+	;;
+
+	[Aa] )
+		echo
+		echo
+		echo "Autumn" >> moodwatcher_history
+		break
+	;;
+
+	[Ww] )
+		echo
+		echo
+		echo "Winter" >> moodwatcher_history
+		break
+	;;
+
+	"Quit" | "quit" )
+		echo "See you later!"
+	exit 0
+	;;
+
+	* )
+		echo
+		echo
+	;;
+
+	esac
+
+done
+
+
 echo "What is your feelings?"
 echo
 echo "Your feeling is good, then type G,"
